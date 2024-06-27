@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "baseUrl": ".",
+    "baseUrl": "src",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -18,14 +18,12 @@
     "jsx": "react-jsx",
     "incremental": true,
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@domain/*": ["src/domain/*"],
-      "@utils/*": ["src/utils/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@pages/*": ["src/pages/*"],
-      "@contexts/*": ["src/contexts/*"]
+      "@components/*": ["components/*"],
+      "@domain/*": ["domain/*"],
+      "@hooks/*": ["hooks/*"],
+      "@contexts/*": ["contexts/*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "src"],
   "exclude": ["node_modules", "dist", "out", "coverage", "**/__tests__/**"]
 }

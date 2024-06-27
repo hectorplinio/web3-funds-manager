@@ -1,14 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createRoot } from 'react-dom/client';
+import { BlockchainProvider } from './contexts/BlockchainContext';
+import { LoadingProvider } from './contexts/LoadingContext';
 
-ReactDOM.render(
+const rootElement = document.getElementById('root') as HTMLElement;
+const root = createRoot(rootElement);
+
+root.render(
   <React.StrictMode>
-    <App />
+    <BlockchainProvider>
+      <LoadingProvider>
+        <App />
+      </LoadingProvider>
+    </BlockchainProvider>
   </React.StrictMode>,
-  document.getElementById('root'),
 );
 
 reportWebVitals();
