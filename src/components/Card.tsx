@@ -44,13 +44,17 @@ export const Card = () => {
       <div className="flex justify-between mb-4">
         <button
           onClick={handleSendClick}
-          className={`px-4 py-2 rounded-md ${showForm === true ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          className={`px-4 py-2 rounded-md ${
+            showForm === true ? 'bg-blue-500 text-white' : 'bg-gray-200'
+          }`}
         >
           Send
         </button>
         <button
           onClick={handleReceiveClick}
-          className={`px-4 py-2 rounded-md ${showForm === false ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          className={`px-4 py-2 rounded-md ${
+            showForm === false ? 'bg-blue-500 text-white' : 'bg-gray-200'
+          }`}
         >
           Receive
         </button>
