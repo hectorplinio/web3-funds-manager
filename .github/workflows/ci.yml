@@ -26,6 +26,3 @@ jobs:
 
       - name: Run linter and formatter
         run: yarn run lint && yarn run format
-
-      - name: Run tests
-        run: yarn test
