@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
-export type Blockchain = 'AVAX' | 'USDC' | 'WAVAX';
+export type Blockchain = 'AVAX' | 'USDC' | 'WAVAX' | 'WBNB' | 'STG';
 
 interface BlockchainContextProps {
   blockchain: Blockchain;

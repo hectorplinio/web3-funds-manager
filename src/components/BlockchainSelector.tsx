@@ -1,11 +1,15 @@
 import React from 'react';
 import { useBlockchainContext } from '../contexts/BlockchainContext';
 
+const blockchains = ['AVAX', 'USDC', 'WAVAX', 'WBNB', 'STG'];
+
 export const BlockchainSelector = () => {
   const { blockchain, setBlockchain } = useBlockchainContext();
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setBlockchain(event.target.value as 'AVAX' | 'USDC' | 'WAVAX');
+    setBlockchain(
+      event.target.value as 'AVAX' | 'USDC' | 'WAVAX' | 'WBNB' | 'STG',
+    );
   };
 
   return (
@@ -15,9 +19,11 @@ export const BlockchainSelector = () => {
         onChange={handleChange}
         className="p-2 border rounded-lg shadow-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
-        <option value="AVAX">AVAX</option>
-        <option value="USDC">USDC</option>
-        <option value="WAVAX">WAVAX</option>
+        {blockchains.map((bc) => (
+          <option key={bc} value={bc}>
+            {bc}
+          </option>
+        ))}
       </select>
     </div>
   );
