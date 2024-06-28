@@ -19,7 +19,7 @@ const avaxClient = new AvaxClient({
 export const getBalance = async (address: string) => {
   try {
     const balances = await avaxClient.getBalance(address);
-    console.log('balances:', balances);
+
     return balances;
   } catch (error) {
     console.error('Error getting balance:', error);

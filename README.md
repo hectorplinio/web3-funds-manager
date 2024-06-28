@@ -1,46 +1,141 @@
-# Getting Started with Create React App
+# Web3 Funds Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Web3 Funds Manager is a web application that allows users to manage their funds on various blockchains. Users can send and receive funds, and view their balances.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Web3 Funds Manager](#web3-funds-manager)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+  - [Architecture](#architecture)
+  - [Folder Structure](#folder-structure)
+  - [Development](#development)
+    - [Style guide](#style-guide)
+    - [Testing](#testing)
+    - [Running tests](#running-tests)
+    - [End-to-End Testing](#end-to-end-testing)
+  - [After finishing a task](#after-finishing-a-task)
+  - [Contributing](#contributing)
+  - [License](#license)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Clone the repository:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+git clone https://github.com/hectorplinio/web3-funds-manager.git
+cd web3-funds-manager
+```
 
-### `npm test`
+2. Install the dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm install
+```
 
-### `npm run build`
+Keep in mind that we use `npm` for managing Node packages. If you try installing the dependencies with `yarn`, it will generate a `yarn-lock` file that will likely cause problems with the existing `package-lock.json`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Running the Application
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run the application in development mode, use the following command:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+npm start
+```
 
-### `npm run eject`
+## Architecture
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The application is built with React and uses various hooks and contexts to manage state and interact with blockchain APIs.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Key Components
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- React: Used for building the user interface.
+- Tailwind CSS: Used for styling the application.
+- @xchainjs/xchain-avax: Used for interacting with the Avalanche blockchain.
+- ethers: Library for interacting with Ethereum and EVM-compatible blockchains.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Folder Structure
 
-## Learn More
+```
+web3-funds-manager/
+├── public/              # Static assets
+├── tests/               # e2e test folder
+├── src/
+│   ├── components/      # React components
+│   ├── contexts/        # Context providers for global state
+│   ├── domain/          # Domain-specific logic
+│   ├── hooks/           # Custom hooks
+│   ├── pages/           # React pages
+│   ├── styles/          # Global styles
+│   └── utils/           # Utility functions
+├── .env.local           # Environment variables
+├── .eslintrc.json       # ESLint configuration
+├── package.json         # Project dependencies and scripts
+└── README.md            # Project documentation
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Development
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Style guide
+
+Before submitting a patch, please make sure that the code is formatted executing this command:
+
+```
+npm run format
+```
+
+### Testing
+
+Testing is crucial for us and we strive for high coverage of our code.
+
+We encourage you to write tests for every functionality you build and also update the existing ones if they need to.
+
+#### Running tests
+
+Before running the test, install the needed dependencies:
+
+```
+npm install
+```
+
+Execute all tests with:
+
+```
+npm run test
+```
+
+#### End-to-End Testing
+
+We use Cypress for end-to-end testing. Cypress tests can be found in the tests directory.
+
+To run the Cypress tests, use the following command:
+
+```
+npx cypress open
+```
+
+Ensure the application is running before executing the E2E tests. You can start the application with:
+
+```
+npm run start
+```
+
+Then, in a separate terminal, run the Playwright tests.
+
+## After finishing a task
+
+Before pushing your changes, make sure you run the linter and prettier to ensure the code follows the rules, or the CI pipeline will throw an error and fail:
+
+```
+npm run lint:fix
+npm run format
+```
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request if you have any improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License.

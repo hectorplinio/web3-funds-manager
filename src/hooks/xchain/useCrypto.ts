@@ -15,7 +15,7 @@ export const useCrypto = () => {
     setError(null);
     try {
       const result = await getBalance(address);
-      console.log('result:', result);
+
       if (result && result.length > 0) {
         const balanceForBlockchain = result.find(
           (item) => item.asset.ticker == blockchain,
