@@ -107,12 +107,12 @@ npm run test
 
 #### End-to-End Testing
 
-We use Cypress for end-to-end testing. Cypress tests can be found in the tests directory.
+We use Playwright for end-to-end testing. Playwright tests can be found in the `tests` directory.
 
-To run the Cypress tests, use the following command:
+To run the Playwright tests, use the following command:
 
 ```
-npx cypress open
+npm run test:e2e
 ```
 
 Ensure the application is running before executing the E2E tests. You can start the application with:
